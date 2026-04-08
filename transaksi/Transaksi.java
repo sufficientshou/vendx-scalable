@@ -22,15 +22,19 @@ public class Transaksi {
         hitungTotal();
     }
 
-    public void hitungTotal() {
+    private void hitungTotal() {
         total = barang.getHarga() * jumlah;
     }
 
     public void cetakStruk() {
-        System.out.println("\n=== STRUK ===");
+        System.out.println("\n===========================");
+        System.out.println("        STRUK BELANJA");
+        System.out.println("===========================");
         System.out.println("Barang : " + barang.getNama());
         System.out.println("Harga  : " + barang.getHarga());
         System.out.println("Jumlah : " + jumlah);
+        System.out.println("---------------------------");
         System.out.println("Total  : " + total);
+        System.out.println("===========================");
     }
-}
+};

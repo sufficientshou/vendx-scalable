@@ -35,4 +35,8 @@ public class Barang {
     public void setStok(int stok) {
         this.stok = stok;
     }
-}
+
+    public void tampilInfo() {
+        System.out.println(nama + " | Harga: " + harga + " | Stok: " + stok);
+    }
+};

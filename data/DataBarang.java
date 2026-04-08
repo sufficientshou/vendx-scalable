@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import barang.Barang;
 
 public class DataBarang {
-    public static ArrayList<Barang> listBarang = new ArrayList<>();
+    private static ArrayList<Barang> listBarang = new ArrayList<>();
 
     public static void tambahBarang(Barang b) {
         listBarang.add(b);
@@ -23,11 +23,15 @@ public class DataBarang {
         if (listBarang.isEmpty()) {
             System.out.println("Barang kosong");
         } else {
+            System.out.println("\n----------------------------------");
+            System.out.println("No | Nama | Harga | Stok");
+            System.out.println("----------------------------------");
+
             for (int i = 0; i < listBarang.size(); i++) {
                 Barang b = listBarang.get(i);
-                System.out.println((i + 1) + ". " + b.getNama() +
-                        " | Harga: " + b.getHarga() +
-                        " | Stok: " + b.getStok());
+                System.out.println((i + 1) + " | " + b.getNama() +
+                        " | " + b.getHarga() +
+                        " | " + b.getStok());
             }
         }
     }
@@ -37,5 +41,13 @@ public class DataBarang {
             return listBarang.get(index);
         }
         return null;
+    }
+
+    public static boolean kurangiStok(Barang b, int jumlah) {
+        if (jumlah <= b.getStok()) {
+            b.setStok(b.getStok() - jumlah);
+            return true;
+        }
+        return false;
     }
 }
